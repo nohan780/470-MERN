@@ -1,8 +1,9 @@
 import axios from "../../axios"; 
 import React from 'react';
 import '../styles/Navbar.css';
-
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
+    const navigate = useNavigate();
     const handleLogout = async () => {
         try {
 
@@ -21,21 +22,26 @@ const Navbar = () => {
     };
 
     const handleTP = async() =>{
-
+        navigate('/therapist');
+    }
+    const handleDB = async() =>{
+        navigate('/');
     }
 
     return (
         <nav className="navbar">
             <div className="navbar-left">
-                <h1 className="title">Whack Shack</h1>
+                <h1 className="title" onClick={handleDB}>Whack Shack</h1>
             </div>
             <div className="navbar-right">
+
                 <button className="therapist-btn" onClick={handleTP}>
                     Therapists
                 </button>
                 <button className="logout-btn" onClick={handleLogout}>
                     Logout
                 </button>
+
             </div>
         </nav>
     );

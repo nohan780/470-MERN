@@ -43,3 +43,25 @@ export const addOrUpdateReview = async (req, res) => {
         res.status(500).json({ message: 'Failed to submit review' });
     }
 };
+
+export const createTherapist = async (req, res) => {
+    try {
+        const { name, about } = req.body;
+        
+        if (!name) {
+            return res.status(400).json({ message: "Name is required." });
+        }
+
+        const newTherapist = new Therapist({
+            name,
+            about: about || "No description provided.",  // Default if about is empty
+        });
+
+        await newTherapist.save();
+        
+        res.status(201).json({ message: "Therapist created successfully", therapist: newTherapist });
+    } catch (error) {
+        console.error("Error creating therapist:", error);
+        res.status(500).json({ message: 'Failed to create therapist' });
+    }
+};
