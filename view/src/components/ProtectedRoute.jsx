@@ -1,30 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import { Redirect } from 'react-router-dom';
-import axios from '../axios.jsx';
+import { Navigate } from 'react-router-dom'; 
+import axiosAuth from '../../axios'; 
 
 const ProtectedRoute = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(null);
 
     useEffect(() => {
-        
-        axios.get('/api/getCurrentUser')
-            .then(response => {
-                setIsAuthenticated(true); // User is logged in
+        axiosAuth.get('/api/users/current')
+            .then(() => {
+                setIsAuthenticated(true); 
             })
-            .catch(error => {
-                setIsAuthenticated(false); // User is not logged in
+            .catch(() => {
+                setIsAuthenticated(false);
             });
     }, []);
 
     if (isAuthenticated === null) {
-        return <div>Loading...</div>; // Optionally show a loading spinner
+        return <div>Loading...</div>; 
     }
 
     if (!isAuthenticated) {
-        return <Redirect to="/login" />; // Redirect to login if not authenticated
+        return <Navigate to="/login" />; 
     }
 
-    return children; // Render the protected route content
+    return children; 
 };
 
 export default ProtectedRoute;

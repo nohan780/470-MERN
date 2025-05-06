@@ -4,10 +4,18 @@ import session from 'express-session';
 import MongoStore from 'connect-mongo';
 import { connectDB } from './config/db.js';
 import userRoutes from './routes/userRoutes.js'; // Adjust path if needed
+import cors from 'cors'; // Import cors
 
 dotenv.config();
 
 const app = express();
+
+// Enable CORS for specific origins (React app's origin)
+app.use(cors({
+    origin: 'http://localhost:5173',  // Update this with the correct frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allow specific methods
+    credentials: true,  // Allow cookies to be sent with requests
+}));
 
 app.use(express.json());
 
@@ -24,7 +32,6 @@ app.use(session({
         collectionName: 'sessions',
     }),
 }));
-
 
 app.use('/api/users', userRoutes);
 

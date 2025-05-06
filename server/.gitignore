@@ -1,1 +1,23 @@
 node_modules/
+
+
+# Ignore environment variables files
+.env
+
+# Ignore log files
+*.log
+
+# Ignore IDE and editor-specific files (e.g., VS Code, IntelliJ)
+.vscode/
+.idea/
+
+# Ignore OS-specific files (macOS, Windows)
+.DS_Store
+Thumbs.db
+
+# Ignore build and distribution files (if any)
+dist/
+build/
+
+# Ignore package-lock.json (optional, if you don’t want to track the exact version of dependencies)
+package-lock.json

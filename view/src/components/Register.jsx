@@ -1,24 +1,29 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Change useHistory to useNavigate
+import { useNavigate } from 'react-router-dom';
+import axios from '../../axios'; // use your configured instance
 
 const Register = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(''); // Clear any previous error messages
+
     try {
-      const response = await axios.post('http://localhost:5000/api/users/register', {
+      const response = await axios.post('/api/users/register', {
         username,
         email,
         password
       });
+
       if (response.status === 201) {
-        navigate('/login'); // Use navigate to redirect
+        // On success, clear any previous errors and navigate
+        setError(''); 
+        navigate('/login'); 
       }
     } catch (err) {
       setError(err.response?.data?.message || 'Registration failed');
@@ -28,7 +33,9 @@ const Register = () => {
   return (
     <div className="register-container">
       <h2>Register</h2>
+
       {error && <p className="error">{error}</p>}
+
       <form onSubmit={handleSubmit}>
         <div>
           <label>Username:</label>
@@ -37,8 +44,10 @@ const Register = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
+            autoComplete="username"
           />
         </div>
+
         <div>
           <label>Email:</label>
           <input
@@ -46,8 +55,10 @@ const Register = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            autoComplete="email"
           />
         </div>
+
         <div>
           <label>Password:</label>
           <input
@@ -55,11 +66,14 @@ const Register = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            autoComplete="new-password"
           />
         </div>
+
         <button type="submit">Register</button>
       </form>
-      <p>Already have an account? <a href="/login">Login</a></p>
+
+      <p>Already have an account? <span style={{ cursor: 'pointer' }} onClick={() => navigate('/login')}>Login</span></p>
     </div>
   );
 };
