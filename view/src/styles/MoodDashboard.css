@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1b1b1b;
+  font-family: sans-serif;
+}
+
+/* Align dashboard components */
+.main-dashboard {
+  padding-top: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Universal card styling */
+.dashboard-card {
+  background-color: #2a2a2a;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 300px; /* flexible width, min 300px */
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  min-height: 400px;
+}
+
+/* Ensure forms and calendar don't overflow */
+.mood-form input,
+.mood-form textarea,
+.mood-form select,
+.calendar-container select {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-dashboard {
+    flex-direction: column;
+    align-items: center;
+  }
+}

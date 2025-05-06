@@ -1,0 +1,42 @@
+.suggestion-box {
+    background-color: #f0f0f0;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+  }
+  
+.suggestion-box h2 {
+color: #2e3a47;
+font-size: 1.6rem;
+margin-bottom: 15px;
+}
+
+.suggestion-box p {
+font-size: 1rem;
+color: #333;
+margin: 8px 0;
+}
+
+.suggestion-box .tip {
+margin-top: 10px;
+font-style: italic;
+color: #4cb84c;
+font-weight: 500;
+}
+/* Style for error message */
+.error {
+    color: red;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Style for loading state */
+.loading {
+    color: #5eec63;
+    font-style: italic;
+}

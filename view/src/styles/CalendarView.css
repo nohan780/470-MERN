@@ -1,0 +1,117 @@
+/* Calendar Container */
+.calendar-container {
+    background-color: #f0f0f0; /* ash grey */
+    max-width: 700px;
+    margin: 100px auto 40px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+    flex: 1;
+}
+
+/* Calendar Header */
+.calendar-container h2 {
+    text-align: center;
+    color: #2e3a47; /* Darker text color */
+    margin-bottom: 20px;
+}
+
+/* react-calendar base styling overrides */
+.react-calendar {
+    background: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-size: 1rem;
+    width: 100%;
+}
+
+/* React Calendar Tiles */
+.react-calendar__tile {
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    color: #333; /* Darker text color */
+}
+
+.react-calendar__month-view__days__day {
+    color: #333 !important; /* Ensure all text is visible */
+}
+
+.react-calendar__tile--now {
+    background: #d9f7da !important; /* subtle light green tint */
+}
+
+.react-calendar__tile--active {
+    background: #5eec63 !important;
+    color: white !important; /* Text color when active */
+}
+
+.highlight {
+    background-color: #b2ffb5 !important;
+    border-radius: 8px;
+}
+
+/* Mood details section */
+.mood-details {
+    margin-top: 30px;
+}
+
+.mood-details h3 {
+    color: #2e3a47; /* Darker text color */
+    margin-bottom: 10px;
+}
+
+.mood-entry {
+    background-color: #ffffff;
+    border-left: 5px solid #5eec63;
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    color: #333; /* Text color for mood entries */
+}
+
+.mood-entry strong {
+    color: #4cb84c;
+    font-size: 1.1rem;
+}
+
+/* Shared card styling */
+.card {
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    min-width: 300px;
+    max-width: 400px;
+    flex: 1;
+    color: #333; /* Text color in cards */
+}
+/* Style for the mood selection dropdown */
+.mood-details select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.mood-details select:hover {
+    border-color: #5eec63;
+}
+@media (max-width: 768px) {
+    .calendar-container {
+        margin: 50px auto;
+        padding: 20px;
+        max-width: 100%;
+    }
+    
+    .mood-details {
+        margin-top: 20px;
+    }
+}

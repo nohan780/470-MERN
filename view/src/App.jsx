@@ -3,7 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
 import ProtectedRoute from './components/ProtectedRoute';
+import MoodDashboard from './pages/MoodDashboard';
 import Dashboard from './pages/Dashboard';
+import CalendarView from './components/CalendarView';
+import SuggestionBox from './components/SuggestionBox';
 
 const App = () => {
   return (
@@ -14,12 +17,28 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
-          {/* Protected Home Route */}
+          {/* Protected Routes */}
           <Route
             path="/"
             element={
               <ProtectedRoute>
                 <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/mood"
+            element={
+              <ProtectedRoute>
+                <MoodDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <SuggestionBox />
               </ProtectedRoute>
             }
           />
