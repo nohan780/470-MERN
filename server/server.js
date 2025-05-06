@@ -5,6 +5,8 @@ import MongoStore from 'connect-mongo';
 import { connectDB } from './config/db.js';
 import userRoutes from './routes/userRoutes.js'; // Adjust path if needed
 import cors from 'cors'; // Import cors
+import therapistRoutes from './routes/therapistRoutes.js';
+import bookingRoutes from './routes/bookingRoutes.js';
 
 dotenv.config();
 
@@ -34,6 +36,9 @@ app.use(session({
 }));
 
 app.use('/api/users', userRoutes);
+app.use('/api/therapists', therapistRoutes);
+app.use('/api/bookings', bookingRoutes);
+
 
 const PORT = process.env.PORT || 5000;
 connectDB().then(() => {

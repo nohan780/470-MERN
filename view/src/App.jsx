@@ -4,7 +4,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import ProtectedRoute from './components/ProtectedRoute';
 import Dashboard from './pages/Dashboard';
-
+import Therapist from './pages/Therapist';
 const App = () => {
   return (
     <Router>
@@ -23,6 +23,14 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+          <Route
+            path = "/therapist"
+            element={
+              <ProtectedRoute>
+                <Therapist />
+              </ProtectedRoute>
+            }
+            />
         </Routes>
       </div>
     </Router>

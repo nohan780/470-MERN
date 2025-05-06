@@ -20,12 +20,19 @@ const Navbar = () => {
         }
     };
 
+    const handleTP = async() =>{
+
+    }
+
     return (
         <nav className="navbar">
             <div className="navbar-left">
                 <h1 className="title">Whack Shack</h1>
             </div>
             <div className="navbar-right">
+                <button className="therapist-btn" onClick={handleTP}>
+                    Therapists
+                </button>
                 <button className="logout-btn" onClick={handleLogout}>
                     Logout
                 </button>
