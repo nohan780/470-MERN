@@ -1,0 +1,108 @@
+/* General body and layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1c1c1c; /* Dark background to make green elements pop */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .login-container {
+    background-color: #2e3a47; /* Darker background for the form */
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .login-container:hover {
+    transform: scale(1.02);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #5eec63; /* Light green for the heading */
+    margin-bottom: 20px;
+    font-size: 2rem;
+    transition: color 0.3s ease;
+  }
+  
+  h2:hover {
+    color: #4cb84c; /* Slightly darker green on hover */
+  }
+  
+  /* Input fields */
+  input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    background-color: #3b4a58; /* Dark grey background */
+    border: 1px solid #5eec63; /* Green border */
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #4cb84c; /* Focused input with a slightly darker green */
+    background-color: #2e3a47; /* Darker background on focus */
+  }
+  
+  /* Submit button */
+  button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(45deg, #5eec63, #4cb84c); /* Green gradient */
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  button:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+  }
+  
+  button:active {
+    transform: translateY(0); /* Slightly depressed effect on click */
+  }
+  
+  /* Error message */
+  .error {
+    color: #e74c3c; /* Red for error messages */
+    font-size: 1rem;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards; /* Smooth fade-in animation */
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Links */
+  a {
+    color: #5eec63;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #4cb84c; /* Darker green on hover */
+  }
+  
