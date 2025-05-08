@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from '../../axios'; // your configured axios with withCredentials: true
+import axios from '../../axios'; 
 import "../styles/Login.css";
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -10,12 +10,12 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(''); // clear previous error
+    setError(''); 
   
     try {
       const response = await axios.post('/api/users/login', { email, password });
       if (response.status === 200) {
-        navigate('/');  // Redirect to root (/) after successful login
+        navigate('/');  
       }
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed');

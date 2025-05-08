@@ -7,7 +7,7 @@ import MoodDashboard from './pages/MoodDashboard';
 import Dashboard from './pages/Dashboard';
 import CalendarView from './components/CalendarView';
 import SuggestionBox from './components/SuggestionBox';
-
+import Therapist from './pages/Therapist';
 const App = () => {
   return (
     <Router>
@@ -26,6 +26,14 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+          <Route
+            path = "/therapist"
+            element={
+              <ProtectedRoute>
+                <Therapist />
+              </ProtectedRoute>
+            }
+            />
           <Route
             path="/mood"
             element={

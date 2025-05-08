@@ -1,0 +1,225 @@
+/* Base page styling */
+.therapist-page {
+    min-height: 100vh;
+    background-color: #F0FFF4; /* Soft green background */
+}
+
+/* Container for all therapist cards */
+.therapist-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px 40px; /* Top padding to avoid navbar overlap */
+    box-sizing: border-box;
+}
+
+/* Individual therapist card */
+.therapist-card {
+    background-color: #FFFFFF;
+    border: 1px solid #C6F6D5; /* Light green border */
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Therapist name */
+.therapist-name {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2F855A; /* Dark green for headings */
+    margin-bottom: 8px;
+}
+
+/* Therapist about text */
+.therapist-about {
+    font-size: 16px;
+    color: #4A5568; /* Neutral gray for text */
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+/* Therapist rating */
+.therapist-rating {
+    font-size: 16px;
+    font-weight: 500;
+    color: #38A169; /* Medium green for ratings */
+    margin-bottom: 16px;
+}
+
+/* Book button */
+.therapist-book-button {
+    background-color: #38A169; /* Green button */
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.therapist-book-button:hover {
+    background-color: #2F855A; /* Darker green on hover */
+}
+
+/* Reviews section */
+.therapist-reviews-section {
+    margin-top: 24px;
+}
+
+/* Reviews heading */
+.reviews-heading {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2F855A;
+    margin-bottom: 12px;
+}
+
+/* Individual review card */
+.review-card {
+    background-color: #E6FFFA; /* Very light green for reviews */
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+/* Review user */
+.review-user {
+    font-size: 14px;
+    color: #2D3748;
+    margin-bottom: 8px;
+}
+
+.review-user strong {
+    color: #2F855A;
+}
+
+/* Review rating */
+.review-rating {
+    font-size: 14px;
+    color: #38A169;
+    margin-bottom: 8px;
+}
+
+.review-rating strong {
+    color: #2F855A;
+}
+
+/* Review comment */
+.review-comment {
+    font-size: 14px;
+    color: #2D3748;
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+.review-comment strong {
+    color: #2F855A;
+}
+
+/* View more button in review */
+.review-view-more-button {
+    background: none;
+    border: none;
+    color: #319795; /* Teal for links/buttons */
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 8px;
+    text-decoration: underline;
+}
+
+.review-view-more-button:hover {
+    color: #2C7A7B;
+}
+
+/* No reviews text */
+.no-reviews {
+    font-size: 14px;
+    color: #4A5568;
+    margin-top: 8px;
+}
+
+/* No therapists text */
+.no-therapists {
+    font-size: 16px;
+    color: #4A5568;
+    text-align: center;
+    margin-top: 24px;
+}
+
+/* Modal overlay */
+.review-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent backdrop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal close button */
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 24px;
+    color: #2F855A;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #276749;
+}
+
+/* Modal body */
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Modal user */
+.modal-user {
+    font-size: 16px;
+    color: #2D3748;
+}
+
+.modal-user strong {
+    color: #2F855A;
+}
+
+/* Modal rating */
+.modal-rating {
+    font-size: 16px;
+    color: #38A169;
+}
+
+.modal-rating strong {
+    color: #2F855A;
+}
+
+/* Modal comment */
+.modal-comment {
+    font-size: 16px;
+    color: #2D3748;
+    line-height: 1.5;
+}
+
+.modal-comment strong {
+    color: #2F855A;
+}
