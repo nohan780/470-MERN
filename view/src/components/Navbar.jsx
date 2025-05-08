@@ -37,7 +37,7 @@ const Navbar = () => {
             <div className="navbar-right">
                 <button onClick={() => navigate('/')} className="nav-btn">Home</button>
                 <button onClick={() => navigate('/mood')} className="nav-btn">Mood</button>
-                <button onClick={() => navigate('/profile')} className="nav-btn">Suggestions</button>
+                
                 <button className="therapist-btn" onClick={handleTP}>
                     Therapists
                 </button>
