@@ -7,7 +7,7 @@ import userRoutes from './routes/userRoutes.js'; // Adjust path if needed
 import cors from 'cors'; // Import cors
 import therapistRoutes from './routes/therapistRoutes.js';
 import bookingRoutes from './routes/bookingRoutes.js';
-
+import postRoutes from './routes/postRoutes.js';
 dotenv.config();
 
 const app = express();
@@ -38,7 +38,7 @@ app.use(session({
 app.use('/api/users', userRoutes);
 app.use('/api/therapists', therapistRoutes);
 app.use('/api/bookings', bookingRoutes);
-
+app.use('/api/posts', postRoutes);
 
 const PORT = process.env.PORT || 5000;
 connectDB().then(() => {

@@ -1,16 +1,22 @@
-// Dashboard.jsx
 import React from 'react';
 import Navbar from '../components/Navbar';
-import BookedAppointments from '../components/BookedAppointments';
-
+import BookingsList from '../components/BookedAppointments';
+import Forum from '../components/Forum';
+import '../styles/styles.css';
 
 const Dashboard = () => {
   return (
-    <div>
-        <Navbar />
-        <BookedAppointments/>
+    <div className="dashboard-container">
+      <Navbar />
+      <div className="section bookings-section">
+        <h2>Your Bookings</h2>
+        <BookingsList />
+      </div>
+      <div className="section forum-section">
+        <Forum />
+      </div>
     </div>
   );
 };
 
-export default Dashboard; 
+export default Dashboard;

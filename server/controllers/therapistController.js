@@ -21,7 +21,11 @@ export const getTherapistById = async (req, res) => {
 
 export const addOrUpdateReview = async (req, res) => {
     try {
-        const { rating, comment, userId } = req.body;
+        const { rating, comment } = req.body;
+        const userId = req.session.userId;
+
+        if (!userId) return res.status(401).json({ message: 'Unauthorized' });
+
         const therapist = await Therapist.findById(req.params.id);
         if (!therapist) return res.status(404).json({ message: 'Therapist not found' });
 
@@ -43,6 +47,7 @@ export const addOrUpdateReview = async (req, res) => {
         res.status(500).json({ message: 'Failed to submit review' });
     }
 };
+
 
 export const createTherapist = async (req, res) => {
     try {

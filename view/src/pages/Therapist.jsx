@@ -37,13 +37,14 @@ const TherapistCard = ({ therapist, onBook, onViewReview }) => (
 
 const ReviewCard = ({ review, onViewReview }) => (
     <div className="review-card">
-        <p className="review-user"><strong>{review.user.name}</strong></p>
+        
+        <p className="review-user"><strong>{review.user ? review.user.name : 'Anonymous'}</strong></p>
         <p className="review-rating">Rating: {review.rating}</p>
         <p className="review-comment">
             {review.comment.slice(0, 80)}...
             <button
                 className="review-view-more-button"
-                onClick={() => onViewReview(review)}
+                onClick={() => onViewReview(review)}  
             >
                 Read More
             </button>
@@ -51,16 +52,18 @@ const ReviewCard = ({ review, onViewReview }) => (
     </div>
 );
 
+
+
 const ReviewModal = ({ isOpen, review, onClose }) => {
     if (!isOpen || !review) return null;
-    
+
     return (
         <div className="modal-overlay">
             <div className="modal-content">
                 <span className="modal-close" onClick={onClose}>×</span>
                 <h2>Review Details</h2>
                 <div className="modal-body">
-                    <p><strong>User:</strong> {review.user.name}</p>
+                    <p><strong>User:</strong> {review.user ? review.user.name : 'Anonymous'}</p>
                     <p><strong>Rating:</strong> {review.rating}</p>
                     <p><strong>Comment:</strong> {review.comment}</p>
                 </div>
