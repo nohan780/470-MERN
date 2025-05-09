@@ -13,7 +13,7 @@
 /* Calendar Header */
 .calendar-container h2 {
     text-align: center;
-    color: #2e3a47; /* Darker text color */
+    color: #f0f0f0; /* Darker text color */
     margin-bottom: 20px;
 }
 
@@ -60,7 +60,7 @@
 }
 
 .mood-details h3 {
-    color: #2e3a47; /* Darker text color */
+    color: #f0f0f0; /* Darker text color */
     margin-bottom: 10px;
 }
 
