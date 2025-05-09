@@ -41,3 +41,50 @@ export const createBooking = async (req, res) => {
         res.status(500).json({ message: "Server error" });
     }
 };
+
+
+export const getBookingsForUser = async (req, res) => {
+    try {
+        const userId = req.session.userId;  
+
+        
+        const bookings = await Booking.find({ user: userId })
+            .populate('therapist', 'name about')  
+            .populate('user', 'username email'); 
+
+        if (bookings.length === 0) {
+            return res.status(404).json({ message: "No bookings found for this user" });
+        }
+
+        
+        res.status(200).json(bookings);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Failed to fetch bookings' });
+    }
+};
+
+
+
+export const updatePaymentStatus = async (req, res) => {
+    try {
+      const { appointmentId } = req.params; // Get the booking ID from URL params
+      const { paymentStatus } = req.body; // Get the new payment status from request body
+  
+      // Find the booking by its ID and update the paymentStatus
+      const booking = await Booking.findByIdAndUpdate(
+        appointmentId,
+        { paymentStatus },
+        { new: true } // Return the updated booking document
+      );
+  
+      if (!booking) {
+        return res.status(404).json({ message: 'Booking not found' });
+      }
+  
+      res.status(200).json(booking); // Send back the updated booking
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Failed to update payment status' });
+    }
+  };

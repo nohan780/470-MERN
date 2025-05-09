@@ -1,58 +1,88 @@
+/* Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #2e3a47;
-    padding: 15px 30px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white; /* White background from BookingsList */
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  z-index: 1000;
+  border-radius: 0 0 12px 12px; /* Rounded bottom corners */
+  transition: backdrop-filter 0.3s ease, background 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.navbar:hover {
+  backdrop-filter: blur(5px); /* Glassmorphism blur effect */
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+}
+
+/* Title */
+.title {
+  color: #3b82f6; /* Blue accent from BookingsList */
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.title:hover {
+  transform: scale(1.05) translateY(-2px); /* Scale and lift */
+  color: #2563eb; /* Darker blue */
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5); /* Glowing effect */
+}
+
+/* Navbar Right */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Buttons */
+.logout-btn,
+.therapist-btn {
+  padding: 10px 20px;
+  background: #3b82f6; /* Solid blue from BookingsList */
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.logout-btn:hover,
+.therapist-btn:hover {
+  transform: translateY(-2px) rotate(2deg); /* Lift and slight rotation */
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4); /* Blue shadow */
+  background: #2563eb; /* Darker blue */
+  animation: pulse 1.5s infinite; /* Pulse animation */
+}
+
+.logout-btn:active,
+.therapist-btn:active {
+  transform: translateY(0); /* Depress on click */
+  box-shadow: none;
+  animation: none; /* Remove pulse on click */
+}
+
+@keyframes pulse {
+  0% {
+      transform: translateY(-2px) scale(1);
   }
-  
-  .title {
-    color: #5eec63;
-    font-size: 1.8rem;
-    margin: 0;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+  50% {
+      transform: translateY(-2px) scale(1.02);
   }
-  
-  .title:hover {
-    transform: scale(1.05);
+  100% {
+      transform: translateY(-2px) scale(1);
   }
-  
-  .navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  .logout-btn,
-  .therapist-btn {
-    padding: 10px 20px;
-    background: linear-gradient(135deg, #5eec63, #3cb453);
-    border: none;
-    border-radius: 6px;
-    color: white;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-  }
-  
-  .logout-btn:hover,
-  .therapist-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .logout-btn:active,
-  .therapist-btn:active {
-    transform: translateY(0);
-    box-shadow: none;
-  }
-  
+}

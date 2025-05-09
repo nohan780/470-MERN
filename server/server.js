@@ -15,7 +15,7 @@ const app = express();
 // Enable CORS for specific origins (React app's origin)
 app.use(cors({
     origin: 'http://localhost:5173',  // Update this with the correct frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allow specific methods
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],  // Allow specific methods
     credentials: true,  // Allow cookies to be sent with requests
 }));
 

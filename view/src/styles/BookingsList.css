@@ -1,0 +1,83 @@
+/* Bookings List */
+.bookings-table-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.bookings-table-container h2 {
+    font-size: 1.75rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    overflow-y: auto;
+    display: block;
+}
+
+.bookings-table th,
+.bookings-table td {
+    padding: 0.75rem;
+    text-align: left;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+.bookings-table th {
+    background: #3b82f6;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.bookings-table tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.bookings-table tr:hover {
+    background: #f1f5f9;
+}
+
+.mark-paid-button {
+    background: #10b981;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.mark-paid-button:hover {
+    background: #059669;
+}
+
+.mark-paid-button:disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+}
+
+.bookings-loading {
+    text-align: center;
+    color: #6b7280;
+    padding: 2rem;
+    font-size: 1rem;
+}
+
+.no-bookings {
+    text-align: center;
+    color: #6b7280;
+    padding: 1rem;
+    font-size: 1rem;
+}
