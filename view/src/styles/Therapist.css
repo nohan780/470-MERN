@@ -1,225 +1,328 @@
-/* Base page styling */
+/* Therapist Page */
 .therapist-page {
+    background-color: #f4f7fa;
     min-height: 100vh;
-    background-color: #F0FFF4; /* Soft green background */
+    font-family: 'Inter', sans-serif;
 }
 
-/* Container for all therapist cards */
 .therapist-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 20px 40px; /* Top padding to avoid navbar overlap */
-    box-sizing: border-box;
+    padding: 2rem;
 }
 
-/* Individual therapist card */
+.therapist-container h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.therapist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Therapist Card */
 .therapist-card {
-    background-color: #FFFFFF;
-    border: 1px solid #C6F6D5; /* Light green border */
-    border-radius: 8px;
-    padding: 24px;
-    margin-bottom: 24px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Therapist name */
+.therapist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.therapist-card-content {
+    padding: 1.5rem;
+}
+
 .therapist-name {
-    font-size: 24px;
-    font-weight: 600;
-    color: #2F855A; /* Dark green for headings */
-    margin-bottom: 8px;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
 }
 
-/* Therapist about text */
 .therapist-about {
-    font-size: 16px;
-    color: #4A5568; /* Neutral gray for text */
-    margin-bottom: 16px;
-    line-height: 1.5;
+    font-size: 1rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
 }
 
-/* Therapist rating */
 .therapist-rating {
-    font-size: 16px;
-    font-weight: 500;
-    color: #38A169; /* Medium green for ratings */
-    margin-bottom: 16px;
+    font-size: 1rem;
+    color: #f59e0b;
+    margin-bottom: 1rem;
 }
 
-/* Book button */
+.therapist-actions {
+    margin-bottom: 1rem;
+}
+
 .therapist-book-button {
-    background-color: #38A169; /* Green button */
-    color: #FFFFFF;
-    padding: 8px 16px;
+    background: #3b82f6;
+    color: white;
+    padding: 0.75rem 1.5rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    transition: background 0.3s ease;
 }
 
 .therapist-book-button:hover {
-    background-color: #2F855A; /* Darker green on hover */
+    background: #2563eb;
 }
 
-/* Reviews section */
 .therapist-reviews-section {
-    margin-top: 24px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 1rem;
 }
 
-/* Reviews heading */
 .reviews-heading {
-    font-size: 18px;
-    font-weight: 600;
-    color: #2F855A;
-    margin-bottom: 12px;
+    font-size: 1.25rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
 }
 
-/* Individual review card */
+.no-reviews {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* Review Card */
 .review-card {
-    background-color: #E6FFFA; /* Very light green for reviews */
-    border-radius: 6px;
-    padding: 16px;
-    margin-bottom: 16px;
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 8px;
+toid: false
+    margin-bottom: 0.5rem;
 }
 
-/* Review user */
 .review-user {
-    font-size: 14px;
-    color: #2D3748;
-    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 0.25rem;
 }
 
-.review-user strong {
-    color: #2F855A;
-}
-
-/* Review rating */
 .review-rating {
-    font-size: 14px;
-    color: #38A169;
-    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #f59e0b;
+    margin-bottom: 0.25rem;
 }
 
-.review-rating strong {
-    color: #2F855A;
-}
-
-/* Review comment */
 .review-comment {
-    font-size: 14px;
-    color: #2D3748;
-    margin-bottom: 0;
-    line-height: 1.4;
+    font-size: 0.9rem;
+    color: #6b7280;
 }
 
-.review-comment strong {
-    color: #2F855A;
-}
-
-/* View more button in review */
 .review-view-more-button {
     background: none;
     border: none;
-    color: #319795; /* Teal for links/buttons */
+    color: #3b82f6;
     cursor: pointer;
-    font-size: 14px;
-    margin-left: 8px;
-    text-decoration: underline;
+    font-size: 0.9rem;
+    padding: 0;
+    margin-left: 0.5rem;
 }
 
 .review-view-more-button:hover {
-    color: #2C7A7B;
+    text-decoration: underline;
 }
 
-/* No reviews text */
-.no-reviews {
-    font-size: 14px;
-    color: #4A5568;
-    margin-top: 8px;
-}
-
-/* No therapists text */
-.no-therapists {
-    font-size: 16px;
-    color: #4A5568;
-    text-align: center;
-    margin-top: 24px;
-}
-
-/* Modal overlay */
-.review-modal {
+/* Modal Styles */
+.modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent backdrop */
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
 
-/* Modal content */
 .modal-content {
-    background-color: #FFFFFF;
-    border-radius: 8px;
-    padding: 24px;
-    max-width: 500px;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 600px;
     width: 90%;
     position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Modal close button */
 .modal-close {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    font-size: 24px;
-    color: #2F855A;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
     cursor: pointer;
+    color: #6b7280;
 }
 
-.modal-close:hover {
-    color: #276749;
+.modal-content h2 {
+    font-size: 1.75rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
 }
 
-/* Modal body */
-.modal-body {
+.modal-body p {
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.modal-body p strong {
+    color: #1f2937;
+}
+
+/* Booking Form */
+.booking-form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 1rem;
 }
 
-/* Modal user */
-.modal-user {
-    font-size: 16px;
-    color: #2D3748;
+.booking-table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.modal-user strong {
-    color: #2F855A;
+.booking-table th {
+    text-align: left;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: #2c3e50;
 }
 
-/* Modal rating */
-.modal-rating {
-    font-size: 16px;
-    color: #38A169;
+.booking-table td {
+    padding: 0.5rem;
 }
 
-.modal-rating strong {
-    color: #2F855A;
+.booking-table input,
+.booking-table select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #2c3e50;
 }
 
-/* Modal comment */
-.modal-comment {
-    font-size: 16px;
-    color: #2D3748;
-    line-height: 1.5;
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
-.modal-comment strong {
-    color: #2F855A;
+.submit-button,
+.cancel-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.submit-button {
+    background: #3b82f6;
+    color: white;
+}
+
+.submit-button:hover {
+    background: #2563eb;
+}
+
+.cancel-button {
+    background: #ef4444;
+    color: white;
+}
+
+.cancel-button:hover {
+    background: #dc2626;
+}
+
+/* Bookings Table */
+.bookings-table-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.bookings-table-container h2 {
+    font-size: 1.75rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    overflow-y: auto;
+    display: block;
+}
+
+.bookings-table th,
+.bookings-table td {
+    padding: 0.75rem;
+    text-align: left;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+.bookings-table th {
+    background: #3b82f6;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.bookings-table tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.bookings-table tr:hover {
+    background: #f1f5f9;
+}
+
+.mark-paid-button {
+    background: #10b981;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.mark-paid-button:hover {
+    background: #059669;
+}
+
+.mark-paid-button:disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+}
+
+.bookings-loading {
+    text-align: center;
+    color: #6b7280;
+    padding: 2rem;
 }

@@ -8,16 +8,16 @@ import moodRoutes from './routes/moodRoutes.js'; // ✅ New route
 import cors from 'cors';
 import therapistRoutes from './routes/therapistRoutes.js';
 import bookingRoutes from './routes/bookingRoutes.js';
-
+import postRoutes from './routes/postRoutes.js';
 dotenv.config();
 
 const app = express();
 
 // CORS configuration
 app.use(cors({
-    origin: 'http://localhost:5173',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
+    origin: 'http://localhost:5173',  // Update this with the correct frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],  // Allow specific methods
+    credentials: true,  // Allow cookies to be sent with requests
 }));
 
 app.use(express.json());
@@ -42,7 +42,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/moods', moodRoutes); // ✅ Mount new mood feature routes
 app.use('/api/therapists', therapistRoutes);
 app.use('/api/bookings', bookingRoutes);
-
+app.use('/api/posts', postRoutes);
 
 const PORT = process.env.PORT || 5000;
 

@@ -1,108 +1,164 @@
 /* General body and layout */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1c1c1c; /* Dark background to make green elements pop */
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f7fa; /* Light gray background from BookingsList */
+  color: #2c3e50; /* Dark text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.register-container {
+  background: white; /* White container background */
+  padding: 40px;
+  border-radius: 12px; /* Rounded corners */
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, backdrop-filter 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-container:hover {
+  transform: scale(1.02); /* Slight scale on hover */
+  backdrop-filter: blur(5px); /* Glassmorphism blur effect */
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+}
+
+h2 {
+  text-align: center;
+  color: #3b82f6; /* Blue accent from BookingsList */
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+h2:hover {
+  color: #2563eb; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Input fields */
+input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  background-color: #f9fafb; /* Light gray input background */
+  border: 1px solid #d1d5db; /* Gray border */
+  border-radius: 6px; /* Rounded corners */
+  color: #2c3e50;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3b82f6; /* Blue border on focus */
+  background-color: white; /* White background on focus */
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5); /* Glowing effect */
+}
+
+/* Submit button */
+button {
+  width: 100%;
+  padding: 14px;
+  background: #3b82f6; /* Solid blue from BookingsList */
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  transform: translateY(-3px); /* Lift effect */
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4); /* Blue shadow */
+  background: #2563eb; /* Darker blue */
+  animation: pulse 1.5s infinite; /* Pulse animation */
+}
+
+button:active {
+  transform: translateY(0); /* Depress on click */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes pulse {
+  0% {
+      transform: translateY(-3px) scale(1);
   }
-  
-  .register-container {
-    background-color: #2e3a47; /* Darker background for the form */
-    padding: 40px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+  50% {
+      transform: translateY(-3px) scale(1.02);
   }
-  
-  .register-container:hover {
-    transform: scale(1.02);
+  100% {
+      transform: translateY(-3px) scale(1);
   }
-  
-  h2 {
-    text-align: center;
-    color: #5eec63; /* Light green for the heading */
-    margin-bottom: 20px;
-    font-size: 2rem;
-    transition: color 0.3s ease;
-  }
-  
-  h2:hover {
-    color: #4cb84c; /* Slightly darker green on hover */
-  }
-  
-  /* Input fields */
-  input {
-    width: 100%;
-    padding: 12px 15px;
-    margin: 10px 0;
-    background-color: #3b4a58; /* Dark grey background */
-    border: 1px solid #5eec63; /* Green border */
-    border-radius: 4px;
-    color: white;
-    font-size: 1rem;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
-  }
-  
-  input:focus {
-    outline: none;
-    border-color: #4cb84c; /* Focused input with a slightly darker green */
-    background-color: #2e3a47; /* Darker background on focus */
-  }
-  
-  /* Submit button */
-  button {
-    width: 100%;
-    padding: 14px;
-    background: linear-gradient(45deg, #5eec63, #4cb84c); /* Green gradient */
-    border: none;
-    border-radius: 4px;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  button:hover {
-    transform: translateY(-3px); /* Lift effect on hover */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
-  }
-  
-  button:active {
-    transform: translateY(0); /* Slightly depressed effect on click */
-  }
-  
-  /* Error message */
-  .error {
-    color: #e74c3c; /* Red for error messages */
-    font-size: 1rem;
-    text-align: center;
-    opacity: 0;
-    animation: fadeIn 0.5s forwards; /* Smooth fade-in animation */
-  }
-  
-  @keyframes fadeIn {
-    0% {
+}
+
+/* Error message */
+.error {
+  color: #ef4444; /* Red for errors, matching cancel button */
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeInShake 0.5s forwards; /* Fade-in with shake */
+}
+
+@keyframes fadeInShake {
+  0% {
       opacity: 0;
-    }
-    100% {
+      transform: translateX(0);
+  }
+  20% {
+      transform: translateX(-5px);
+  }
+  40% {
+      transform: translateX(5px);
+  }
+  60% {
+      transform: translateX(-3px);
+  }
+  80% {
+      transform: translateX(3px);
+  }
+  100% {
       opacity: 1;
-    }
+      transform: translateX(0);
   }
-  
-  /* Links */
-  span {
-    color: #5eec63;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  span:hover {
-    color: #4cb84c; /* Darker green on hover */
-  }
-  
+}
+
+/* Links (span) */
+span {
+  color: #3b82f6; /* Blue for links */
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+span::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+span:hover {
+  color: #2563eb; /* Darker blue */
+}
+
+span:hover::after {
+  width: 100%; /* Underline animation */
+}
